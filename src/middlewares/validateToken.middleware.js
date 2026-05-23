@@ -2,7 +2,7 @@
 // x-user-id and x-user-role headers to this service.
 const validateToken = (req, res, next) => {
     const userId   = req.headers['x-user-id'];
-    const userRole = req.headers['x-user-rol'];
+    const userRole = req.headers['x-user-role'];
     const brigadeId = req.headers['x-user-brigade']
 
     if (!userId) {
