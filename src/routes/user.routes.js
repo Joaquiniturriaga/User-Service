@@ -15,13 +15,14 @@ router.get('/users',                 validateToken, authorizeRole('admin'),  get
 router.put('/users/:id/admin',       validateToken, authorizeRole('admin'),  updateUserAdmin);
 
 // ─── BRIGADAS ─────────────────────────────────────────
-router.get('/brigadas',              validateToken,                          getAllBrigadas);
-router.post('/brigadas',             validateToken, authorizeRole('admin'),  createBrigada);
-router.put('/brigadas/:id',          validateToken, authorizeRole('admin'),  updateBrigada);
-
 // ─── BRIGADE RESPONSES ────────────────────────────────
 router.post('/brigadas/respond',     validateToken,                          brigadeRespond);
-router.put('/brigadas/location',     validateToken,                          updateBrigadeLocation);
+router.put('/brigadas/location',     validateToken,                          updateBrigadeLocation);  
 router.get('/brigadas/active',       validateToken,                          getActiveBrigades);
+
+// ─── BRIGADAS ─────────────────────────────────────────
+router.get('/brigadas',              validateToken,                          getAllBrigadas);
+router.post('/brigadas',             validateToken, authorizeRole('admin'),  createBrigada);
+router.put('/brigadas/:id',          validateToken, authorizeRole('admin'),  updateBrigada);  
 
 module.exports = { router };
