@@ -3,7 +3,7 @@ const validateInternalSecret = (req, res, next) =>{
 
     if (!key  || key !== process.env.INTERNAL_SECRET){
         //Respuesta generica
-        return res-status(401).json({error: 'Unauthorized'});
+        return res.status(401).json({error: 'Unauthorized'});
     }
     next();
 }
