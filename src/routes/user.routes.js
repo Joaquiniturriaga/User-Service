@@ -25,4 +25,5 @@ router.get('/brigadas',              validateToken,                          get
 router.post('/brigadas',             validateToken, authorizeRole('admin'),  createBrigada);
 router.put('/brigadas/:id',          validateToken, authorizeRole('admin'),  updateBrigada);  
 
+
 module.exports = { router };
